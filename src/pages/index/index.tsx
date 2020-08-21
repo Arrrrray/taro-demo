@@ -7,8 +7,11 @@ import "taro-ui/dist/style/components/button.scss"; // 按需引入
 import "./index.less";
 
 export default class Index extends Component {
-  state = {
-    userInfo: {}
+  state: object = {
+    userInfo: {
+      nickName: "",
+      avatarUrl: ""
+    }
   };
   componentWillMount() {}
 
@@ -19,6 +22,9 @@ export default class Index extends Component {
       },
       success: res => {
         console.log("success", res);
+        this.setState({
+          userInfo: res.userInfo
+        });
       },
       fail: res => {
         console.log("fail", res);
@@ -35,9 +41,13 @@ export default class Index extends Component {
   componentDidHide() {}
 
   render() {
+    const { <object>userInfo, } = this.state;
     return (
       <View className="index">
-        <View className="personal-card">个人信息卡片</View>
+        <View className="personal-card">
+          <Text>{userInfo.nickName}</Text>
+          <Text>{userInfo.avatarUrl}</Text>
+        </View>
         {/* <Text>这里是首页</Text>
         <Text>Hello world!</Text>
         <Text>Hello world!</Text>
