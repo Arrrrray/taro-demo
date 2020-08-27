@@ -1,5 +1,66 @@
+.page {
+  padding: 20px;
+}
+
 .personal-card {
-  margin: 20px;
-  border: 1px solid #f8f8f8;
+  border: 2px solid #eee;
   border-radius: 14rpx;
+  display: flex;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.avatar {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.nick-name {
+  flex: 0 0 auto;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.menu-item {
+  width: 240px;
+  flex: 0 0 33%;
+  height: 200px;
+  border-right: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  background-color: #fff;
+  text-align: center;
+}
+
+.menu-icon-content {
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+
+.menu-icon {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border: 1px solid #888;
+  border-radius: 60px;
+  line-height: 60px;
+}
+
+.menu-label {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 30px;
 }

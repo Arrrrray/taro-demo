@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "@tarojs/components";
+import { View, Text, Image, Icon } from "@tarojs/components";
 import { AtButton } from "taro-ui";
 import Taro from "@tarojs/taro";
 
@@ -41,24 +41,39 @@ export default class Index extends Component {
   componentDidHide() {}
 
   render() {
-    const { <object>userInfo, } = this.state;
+    const { userInfo } = this.state;
     return (
-      <View className="index">
+      <View className="page">
         <View className="personal-card">
-          <Text>{userInfo.nickName}</Text>
-          <Text>{userInfo.avatarUrl}</Text>
+          <Image className="avatar" src={userInfo.avatarUrl} />
+          <Text className="nick-name">{userInfo.nickName}</Text>
         </View>
-        {/* <Text>这里是首页</Text>
-        <Text>Hello world!</Text>
-        <Text>Hello world!</Text>
-        <Text>Hello world!</Text>
-        <Text>Hello world!</Text>
-        <Text>Hello world!</Text>
-        <AtButton type='primary'>I need Taro UI</AtButton>
-        <Text>Taro UI 支持 Vue 了吗？</Text>
-        <AtButton type='primary' circle={true}>支持</AtButton>
-        <Text>共建？</Text>
-        <AtButton type='secondary' circle={true}>来</AtButton> */}
+        <View className="menu">
+          <View className="menu-item">
+            <View className="menu-icon-content">
+              <View className="menu-icon">申</View>
+            </View>
+            <Text className="menu-label">添加申请</Text>
+          </View>
+          <View className="menu-item">
+            <View className="menu-icon-content">
+              <View className="menu-icon">申</View>
+            </View>
+            <Text className="menu-label">我的申请</Text>
+          </View>
+          <View className="menu-item">
+            <View className="menu-icon-content">
+              <View className="menu-icon">申</View>
+            </View>
+            <Text className="menu-label">申请汇总</Text>
+          </View>
+          <View className="menu-item">
+            <View className="menu-icon-content">
+              <View className="menu-icon">申</View>
+            </View>
+            <Text className="menu-label">申请统计</Text>
+          </View>
+        </View>
       </View>
     );
   }
